@@ -22,12 +22,18 @@ class Solution(object):
         required = {}
         # loop through the indices of the nums
         for i in range(len(nums)):
+            # if the target minus the num at the specified index is in required
             if target - nums[i] in required:
+                # return the difference at the specified index
                 return [required[target - nums[i]], i]
+            # else
             else:
+                # set the value in required, at the specified index, equal to
+                # i 
                 required[nums[i]] = i
 
-input_list = [2,8,12,15]
-ob1 = Solution()
 
-print(ob1.twoSum(input_list, 20))
+nums = [2, 7, 11, 15]
+solution = Solution()
+
+print(solution.twoSum(nums, 9))
